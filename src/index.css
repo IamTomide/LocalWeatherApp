@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+body{
+  background-color: #0068aa;
+}
+.container {
+  width: 80%;
+  max-width: 710px;
+  margin: 0 auto;
+}
+
+/* Header styles */
+header {
+  padding: 1.5em 0;
+  box-shadow: 0px 5px 10px #323c463c;
+  position: sticky;
+  top: 0;
+  background-color: #0068ab;
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.homeicon{
+  flex-basis: 90%;
+  display: flex;
+  flex-wrap: nowrap;
+  line-height: 1.625rem;
+}
+
+h1{
+  font-size: 1.625em;
+  font-weight: 400;
+  padding: 0.0625em 0.5em 0;
+}
+.infoicon{
+  margin: auto;
+}
+.infoicon:hover{
+  color: #252e34;
+}
+a {
+  text-decoration: none;
+  padding: 0;
+}
+
+/* Home: input for new city and saved cities styles */
+input {
+  margin: 0.875rem 0;
+  border: none;
+  border-bottom: 1px solid white;
+  background-color: #0068aa;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.625em 0.125em;
+}
+input:focus{
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #004E71;
+}
+::placeholder {
+  color: rgba(194, 185, 185, 0.808);
+}
+.cityinfo {
+  display: flex;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  justify-content: space-between;
+  margin-top: 1.25em;
+  padding: 1.375em 0.75em;
+  background-color: #004E71;
+}
+.degree{
+  text-align: right;
+}
+h2{
+  font-size: 1.875rem;
+  padding: 0.125em 0;
+  font-weight: 400;
+}
+.searchlist {
+  position: absolute;
+  background-color: #004E71;
+}
+.searchlist li{
+  list-style: none;
+  text-align: left;
+  padding: 0.75em;
+}
+
+/* DayWeather styles */
+.dayDetails{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.75em 0;
+  font-size: 16px;
+}
+h3{
+  font-size: 36px;
+  padding-bottom: 0.25em;
+}
+.daytemp{
+  font-size: 80px;
+  padding: 0.5em;
+}
+hr {
+  border: solid 0.5px rgba(170, 191, 219, 0.199);
+}
+
+/* Hourly Weather style */
+.divcontainer{
+  padding: 3em 0;
+}
+.hourly{
+  display: flex;
+  /* justify-content: space-between; */
+  flex-basis: 46px;
+  overflow-x: scroll;
+  gap: 2.5rem;
+  padding: 0.5em 0;
+  /* border: solid 2px red; */
+}
+ul{
+  list-style: none;
+  padding: 0;
+  /* border: solid 2px red; */
+  text-align: center;
+}
+
+li{
+  padding: 0.5em 0 0;
+}
+.binCity{
+  display: flex;
+  justify-content: center;
+  margin: 3em 0;
+  gap: .5rem;
+}
+.icon{
+  /* border: solid 2px red; */
+  padding: 0;
+  max-width: 50px;
+  max-height: 50px;
+  margin: 0;
+}
+.hourdeg{
+  font-size: 1.25rem;
+}
+
+/* Week Weather */
+.weekly{
+  display: flex;
+  justify-content: space-between;
+}
+.weekcontainer{
+  padding: 1.5em 0;
+}
+.weekicon{
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  margin: 0;
+}
+.weekly li:first-child{
+  text-align: left;
+  flex-basis: 33%;
+}
+.midicon{
+  flex-basis: 30%;
+  padding: 0;
+  text-align: left;
+}
+
+/* Loading */
+.load{
+  width: 80%;
+  max-width: 710px;
+  margin: 2em auto;
+  padding: 1em 0;
+  /* margin: 2em; */
+  background: linear-gradient(to right, #d2e2ed2e, #edf0f379);
+  background-size: 200% 100%;
+  animation: colorChange 0.7s infinite linear
+}
+
+.load1{
+  padding: 2em 0;
+}
+.load2{
+  padding: 4em 0;
+}
+
+@keyframes colorChange {
+  0% {
+    background-position: 0% 50%; 
+  }
+  100% {
+    background-position: 100% 50%; 
+  }
+}

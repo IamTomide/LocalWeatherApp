@@ -1,9 +1,6 @@
 const DayWeather = ({ roundTemp, capitalDesc, getImg, showdt, current, isLoading, name }) => {
-<<<<<<< HEAD
   const savedCities = JSON.parse(localStorage.getItem('savedCities')) || [];
   
-=======
->>>>>>> 861f4215a4c6abe1bb055666f0722eef118fb2c8
 
   return (
     <>

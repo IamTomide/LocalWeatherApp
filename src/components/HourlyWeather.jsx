@@ -3,12 +3,18 @@ import WeeklyWeather from "./WeeklyWeather";
 import { ImBin2 } from "react-icons/im";
 import useFetch from "../useFetch";
 import { useParams } from "react-router-dom";
+<<<<<<< HEAD
 import { usePlusIcon } from "../context/PlusIconContext";
 import { useEffect } from "react";
 
 const HourlyWeather = ({ cityData, setCityData }) => {
   const { name, lat, lon } = useParams();
   const { setShowPlusIcon } = usePlusIcon();
+=======
+
+const HourlyWeather = () => {
+  const { name, lat, lon } = useParams();
+>>>>>>> 861f4215a4c6abe1bb055666f0722eef118fb2c8
   const { current, hourly, daily, isLoading, error } = useFetch(
     `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=ec33dc7af678f4048005163bbdefe980&units=metric`
   );
@@ -57,6 +63,7 @@ const HourlyWeather = ({ cityData, setCityData }) => {
     return Time;
   };
 
+<<<<<<< HEAD
   useEffect(() => {
     setCityData({ name, lat, lon });
     const savedCities = JSON.parse(localStorage.getItem('savedCities')) || [];
@@ -66,6 +73,8 @@ const HourlyWeather = ({ cityData, setCityData }) => {
     return () => setShowPlusIcon(false);
   }, [name, lat, lon]);
 
+=======
+>>>>>>> 861f4215a4c6abe1bb055666f0722eef118fb2c8
   return (
     <>
       {isLoading && <div className="container load"></div>}

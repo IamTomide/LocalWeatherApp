@@ -11,7 +11,11 @@ body {
   background-color: #0068aa;
 }
 .container {
+<<<<<<< HEAD
   width: 85%;
+=======
+  width: 80%;
+>>>>>>> 861f4215a4c6abe1bb055666f0722eef118fb2c8
   max-width: 710px;
   margin: 0 auto;
 }
@@ -29,14 +33,20 @@ nav {
   flex-wrap: wrap;
 }
 
+<<<<<<< HEAD
 .home {
   flex-basis: 90%;
 }
 .homeicon{
+=======
+.homeicon {
+  flex-basis: 90%;
+>>>>>>> 861f4215a4c6abe1bb055666f0722eef118fb2c8
   display: flex;
   flex-wrap: nowrap;
   line-height: 1.625rem;
 }
+<<<<<<< HEAD
 h1 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -58,15 +68,32 @@ h1 {
   color: #252e34;
 }
 
+=======
+
+h1 {
+  font-size: 1.625em;
+  font-weight: 400;
+  padding: 0.0625em 0.5em 0;
+}
+.infoicon {
+  margin: auto;
+}
+.infoicon:hover {
+  color: #252e34;
+}
+>>>>>>> 861f4215a4c6abe1bb055666f0722eef118fb2c8
 a {
   text-decoration: none;
   padding: 0;
 }
+<<<<<<< HEAD
 @media (max-width: 564px) {
   .homeicon{
     justify-content: center;
   }
 }
+=======
+>>>>>>> 861f4215a4c6abe1bb055666f0722eef118fb2c8
 
 /* Home: input for new city and saved cities styles */
 input {

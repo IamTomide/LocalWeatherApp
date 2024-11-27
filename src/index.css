@@ -69,6 +69,9 @@ a {
 }
 
 /* Home: input for new city and saved cities styles */
+.emptylist{
+  margin: 1.5em 0;
+}
 input {
   margin: 0.875rem 0;
   border: none;

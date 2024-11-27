@@ -37,7 +37,8 @@ const Home = () => {
           ))}
         </ul>
       </div> }
-      {savedList.map((city) => (
+      {savedList.length === 0 && <p className='emptylist'>No locations added. To start tracking a location, search in the field above.</p>}
+      {savedList && savedList.map((city) => (
         <Link to={`/weather/${ city.name }/${city.lat}/${city.lon}`} key={city.lat}><div className="cityinfo">
           <div className="city">
             <h2>{city.name}</h2>

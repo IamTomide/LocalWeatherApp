@@ -2,16 +2,24 @@ import DayWeather from "./DayWeather";
 import WeeklyWeather from "./WeeklyWeather";
 import { ImBin2 } from "react-icons/im";
 import useFetch from "../useFetch";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { usePlusIcon } from "../context/PlusIconContext";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-const HourlyWeather = ({ cityData, setCityData }) => {
+const HourlyWeather = ({ cityData, setCityData, setPreview, preview }) => {
   const { name, lat, lon } = useParams();
   const { setShowPlusIcon } = usePlusIcon();
+  const navigate = useNavigate();
   const { current, hourly, daily, isLoading, error } = useFetch(
     `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=ec33dc7af678f4048005163bbdefe980&units=metric`
   );
+  
+  const removeCity = (cityName) => {
+    const savedCities = JSON.parse(localStorage.getItem('savedCities')) || [];
+    const updatedCities = savedCities.filter((city) => city.name !== cityName);
+    localStorage.setItem('savedCities', JSON.stringify(updatedCities));
+    navigate('/');
+  }
 
   const showdt = (dt) => {
     const dtinms = dt * 1000;
@@ -58,17 +66,27 @@ const HourlyWeather = ({ cityData, setCityData }) => {
   };
 
   useEffect(() => {
-    setCityData({ name, lat, lon });
-    const savedCities = JSON.parse(localStorage.getItem('savedCities')) || [];
-    const cityExists = savedCities.some((city) => city.cityData.name === name);
-    setShowPlusIcon(!cityExists);
+    if (!current) return;
 
-    return () => setShowPlusIcon(false);
-  }, [name, lat, lon]);
+    const newCityData = { name, lat, lon, temperature: roundTemp(current.temp) };
+    setCityData(newCityData);
+    const savedCities = JSON.parse(localStorage.getItem('savedCities')) || [];
+    const cityExists = savedCities.some((city) => city.name === name);
+    setShowPlusIcon(!cityExists);
+    setPreview(!cityExists);
+    
+    
+    return () => 
+      {
+        setShowPlusIcon(false);
+        setPreview(false);
+      };
+  }, [name, lat, lon, current]);
 
   return (
     <>
-      {isLoading && <div className="container load"></div>}
+      {error && <p>Failed to fetch, Reload Page</p>}
+      {preview && <p className="prev">You are currently previewing this city, click the "+" icon to start tracking this city.</p>}
       <DayWeather
         roundTemp={roundTemp}
         capitalDesc={capitalDesc}
@@ -103,7 +121,7 @@ const HourlyWeather = ({ cityData, setCityData }) => {
         showDay={showDay}
       />
       <div className="binCity">
-        <p className="bin">
+        <p className="bin" onClick={() => removeCity(name)}>
           <span>
             <ImBin2 />
           </span>{" "}

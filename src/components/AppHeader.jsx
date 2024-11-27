@@ -5,15 +5,17 @@ import { FaInfoCircle } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa6";
 import { usePlusIcon } from '../context/PlusIconContext';
 
-const AppHeader = (cityData) => {
+const AppHeader = ({ cityData, setPreview }) => {
   const { showPlusIcon, setShowPlusIcon } = usePlusIcon(); 
   
 
   const addCity = () => {
     const savedCities = JSON.parse(localStorage.getItem('savedCities')) || [];
+    console.log(cityData);
     savedCities.push(cityData);
     localStorage.setItem('savedCities', JSON.stringify(savedCities));
     setShowPlusIcon(false);
+    setPreview(false);
   }
 
   return (

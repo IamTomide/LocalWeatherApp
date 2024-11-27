@@ -8,14 +8,16 @@ import PlusIconProvider from "./context/PlusIconContext";
 
 function App() {
   const [cityData, setCityData] = useState({ name: '', lat: '', lon: '' , temperature: ''});
+  const [preview, setPreview ] = useState(false);
+  
 
   return (
     <PlusIconProvider> 
       <Router>
-        <AppHeader cityData={cityData}/>
+        <AppHeader cityData={cityData} setPreview={setPreview}/>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/weather/:name/:lat/:lon/' element={<HourlyWeather setCityData={setCityData}/>} />
+          <Route path='/weather/:name/:lat/:lon/' element={<HourlyWeather setCityData={setCityData} setPreview={setPreview} preview={preview} />} />
         </Routes>
       </Router>
     </PlusIconProvider>

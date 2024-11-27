@@ -7,7 +7,6 @@ const Home = () => {
   const [newval, setNewVal] = useState("");
   const [searchlist, setList] = useState(null);
   const savedList = JSON.parse(localStorage.getItem('savedCities')) || [];
-  console.log(savedList);
 
   const handleChange = (e) => {
     setNewVal(e.target.value);
@@ -39,13 +38,15 @@ const Home = () => {
         </ul>
       </div> }
       {savedList.map((city) => (
-        <div className="cityinfo">
+        <Link to={`/weather/${ city.name }/${city.lat}/${city.lon}`} key={city.lat}><div className="cityinfo">
           <div className="city">
-            <h2>{city.cityData.name}</h2>
-            <p>{city.cityData.name}</p>
+            <h2>{city.name}</h2>
+            <p>{city.name}</p>
           </div>
-          <h2 className="degree">31&deg;</h2>
+          {console.log(city)}
+          <h2 className="degree">{city.temperature}&deg;</h2>
         </div>
+        </Link>
       ))}
       </div>
   );

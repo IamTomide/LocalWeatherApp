@@ -8,10 +8,9 @@ const useFetch = (url) => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-    const weatherurl = `https://api.openweathermap.org/data/3.0/onecall?lat=7.354481&lon=3.874204&appid=ec33dc7af678f4048005163bbdefe980&units=metric`;
     try {
       const fetchWeather = async () => {
-        const response = await fetch(weatherurl);
+        const response = await fetch(url);
         const weatherData = await response.json();
         setCurrent(weatherData.current);
         setHourly(weatherData.hourly);

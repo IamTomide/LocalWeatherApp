@@ -11,11 +11,7 @@ body {
   background-color: #0068aa;
 }
 .container {
-<<<<<<< HEAD
   width: 85%;
-=======
-  width: 80%;
->>>>>>> 861f4215a4c6abe1bb055666f0722eef118fb2c8
   max-width: 710px;
   margin: 0 auto;
 }
@@ -33,20 +29,14 @@ nav {
   flex-wrap: wrap;
 }
 
-<<<<<<< HEAD
 .home {
   flex-basis: 90%;
 }
 .homeicon{
-=======
-.homeicon {
-  flex-basis: 90%;
->>>>>>> 861f4215a4c6abe1bb055666f0722eef118fb2c8
   display: flex;
   flex-wrap: nowrap;
   line-height: 1.625rem;
 }
-<<<<<<< HEAD
 h1 {
   font-size: 1.5rem;
   font-weight: 400;
@@ -68,32 +58,15 @@ h1 {
   color: #252e34;
 }
 
-=======
-
-h1 {
-  font-size: 1.625em;
-  font-weight: 400;
-  padding: 0.0625em 0.5em 0;
-}
-.infoicon {
-  margin: auto;
-}
-.infoicon:hover {
-  color: #252e34;
-}
->>>>>>> 861f4215a4c6abe1bb055666f0722eef118fb2c8
 a {
   text-decoration: none;
   padding: 0;
 }
-<<<<<<< HEAD
 @media (max-width: 564px) {
   .homeicon{
     justify-content: center;
   }
 }
-=======
->>>>>>> 861f4215a4c6abe1bb055666f0722eef118fb2c8
 
 /* Home: input for new city and saved cities styles */
 input {
@@ -134,6 +107,7 @@ h2 {
 .searchlist {
   position: absolute;
   background-color: #004e71;
+  box-shadow: 0px 5px 10px #242b3283;
 }
 .searchlist li {
   list-style: none;
@@ -165,19 +139,21 @@ hr {
 .divcontainer {
   padding: 3em 0;
 }
+.prev{
+  padding: 1rem 0;
+  text-align: center;
+  background-color: #004E71;
+}
 .hourly {
   display: flex;
-  /* justify-content: space-between; */
   flex-basis: 46px;
   overflow-x: scroll;
   gap: 2.5rem;
   padding: 0.5em 0;
-  /* border: solid 2px red; */
 }
 ul {
   list-style: none;
   padding: 0;
-  /* border: solid 2px red; */
   text-align: center;
 }
 
@@ -191,8 +167,12 @@ li {
   gap: 0.5rem;
 }
 
-.bin svg {
-  stroke: red;
+.bin{
+  padding: 1em;
+}
+
+.bin:hover{
+  background-color: rgba(255, 0, 0, 0.341);
 }
 .icon {
   /* border: solid 2px red; */

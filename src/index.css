@@ -49,6 +49,7 @@ h1 {
   display: flex;
   margin: auto;
   gap: 0.5em;
+  color: black;
 }
 .hideplus{
   display: none;
@@ -175,7 +176,7 @@ li {
 }
 
 .bin:hover{
-  background-color: rgba(255, 0, 0, 0.341);
+  background-color: rgba(255, 0, 0, 0.56);
 }
 .icon {
   /* border: solid 2px red; */
@@ -238,4 +239,32 @@ li {
   100% {
     background-position: 100% 50%;
   }
+}
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #004977cf;
+}
+.Modal {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  right: 30%;
+  display: "block";
+  padding: 1em;
+  margin: auto;
+  outline: none;
+  background-color: #0592de;
+}
+
+.Modal button{
+  margin: 1em 35%;
+  padding: 1em 1.5em;
+  text-align: center;
+  background-color: #004E71;
+  border: none;
+  outline: none;
 }
